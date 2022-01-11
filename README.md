@@ -1,4 +1,4 @@
-#FaceLock
+# FaceLock
 
 ```
 python3 extract_embeddings.py --dataset dataset --embeddings output/embeddings.pickle --detector
