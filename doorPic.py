@@ -1,13 +1,4 @@
-from arlo import Arlo
-from datetime import timedelta, date
-import datetime
 import cv2
-import sys
-import threading
-import argparse
-import imutils
-import time
-import sendEmail
 
 def takeSnapshot(url):
     try:

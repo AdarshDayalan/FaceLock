@@ -1,9 +1,4 @@
 import cv2
-import sys
-import threading
-import argparse
-import imutils
-import time
 import os
 
 class snap:

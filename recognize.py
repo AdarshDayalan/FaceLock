@@ -61,7 +61,6 @@ class recognize:
         imageBlob = cv2.dnn.blobFromImage(
             cv2.resize(image, (300, 300)), 1.0, (300, 300),
             (104.0, 177.0, 123.0), swapRB=False, crop=False)
-        cv2.imwrite("rImage.png", image)
         # apply OpenCV's deep learning-based face detector to localize
         # faces in the input image
         detector.setInput(imageBlob)
@@ -117,7 +116,8 @@ class recognize:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
                 self.frame = image
                 print(text)
-                cv2.imwrite("DoorF0.png", image)
+                path = '/home/pi/Downloads/opencv-face-recognition/door_images'
+                cv2.imwrite(os.path.join(path, "DoorF0.png"), image)
 
     def returnFace(self):
         return self.name, self.proba

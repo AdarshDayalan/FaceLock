@@ -2,16 +2,9 @@ from socket import *
 import doorPic
 import garage
 import button
-from snapshot import snap
-from time import ctime
 import RPi.GPIO as GPIO
-import os
-from subprocess import call
 from recognize import recognize
-import sys
-import cv2
 import RPi.GPIO as GPIO
-from time import sleep
 import sendEmail
 
 servoPin = 17
@@ -60,11 +53,6 @@ while run:
                     tcpCliSock.close()
                     tcpCliSock,addr = tcpSerSock.accept()
                     button.unlock()
-
-                elif (data == "Paris"):
-                    tcpCliSock.send(bytes("Niggas in paris", "utf-8"))
-                    tcpCliSock.close()
-                    tcpCliSock,addr = tcpSerSock.accept()
                      
                 elif data == ctrCmd[0]:
                     tcpCliSock.send(bytes("Locking", "utf-8"))
@@ -74,7 +62,7 @@ while run:
                     
                 elif data == ctrCmd[1]:
                                         
-                                        url = "rtsp://wyze:adarsh007@192.168.86.81/live"
+                                        url = "Input camera rtsp link"
                                         
                                         tcpCliSock.send(bytes("Look at camera", "utf-8"))
                                         tcpCliSock.close()
@@ -99,7 +87,7 @@ while run:
                                                 tcpCliSock.close()
                                                 tcpCliSock,addr = tcpSerSock.accept()
 
-                                                if ((name == "Adarsh") or (name == "Yuvi") or (name == "Dayal") or (name == "Tommy")) & (proba >= 0.3):
+                                                if ((name == "Adarsh") or (name == "Yuvi") or (name == "Dayal") or (name == "Tommy")) & (proba >= 0.7):
                                                         tcpCliSock.send(bytes("Welcome home " + name, "utf-8"))
                                                         tcpCliSock.close()
                                                         tcpCliSock,addr = tcpSerSock.accept()
