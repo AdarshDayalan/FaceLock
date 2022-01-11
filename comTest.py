@@ -87,7 +87,7 @@ while run:
                                                 tcpCliSock.close()
                                                 tcpCliSock,addr = tcpSerSock.accept()
 
-                                                if ((name == "Adarsh") or (name == "Yuvi") or (name == "Dayal") or (name == "Tommy")) & (proba >= 0.7):
+                                                if ((name == "Enter Person name") or (name == "Enter Person name") or (name == "Enter Person name")) & (proba >= 0.7):
                                                         tcpCliSock.send(bytes("Welcome home " + name, "utf-8"))
                                                         tcpCliSock.close()
                                                         tcpCliSock,addr = tcpSerSock.accept()
